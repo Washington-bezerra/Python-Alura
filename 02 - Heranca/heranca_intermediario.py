@@ -34,7 +34,7 @@ class Serie(Programa):
     def __init__(self, nome, ano, temporadas):
         super().__init__(nome, ano)
         self.temporadas = temporadas
-
+    #retorna uma string, é melhor, pois não recisamos fica acessando diretamente o obj.
     def __str__(self):
         return f'Nome: {self.nome} - {self.temporadas} temporadas - Likes: {self.likes}'
 
@@ -44,9 +44,11 @@ class Playlist():
         self.nome = nome
         self._programas = programas
 
+    #a class Playlist ganha algumas propriedades de lista, mas não toda, por isso tem o metodo __len__ abaixo
     def __getitem__(self, item)
         return self._programas[item]
 
+    #Usado para retornan o tamanho, pois se colocar len(playlist), haverá erro.
     def __len__(self):
         return len(self._programas)
 
